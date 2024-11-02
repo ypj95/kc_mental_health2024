@@ -5,6 +5,7 @@ description = "Kaggle Challenge to classify mental health problems from tabular 
 authors = ["Yves Neyraud <yves.neyraud@outlook.com>"]
 license = "Apache 2.0"
 readme = "README.md"
+packages = [{ include = "lib"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
