@@ -14,6 +14,8 @@ pandas = "^2.2.3"
 numpy = "^2.1.2"
 altair = {extras = ["all"], version = "^5.4.1"}
 scikit-learn = "^1.5.2"
+jupyterlab = "^4.3.0"
+ipykernel = "^6.29.5"
 
 
 [tool.poetry.group.dev.dependencies]
