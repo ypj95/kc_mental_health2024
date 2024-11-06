@@ -11,11 +11,12 @@ packages = [{ include = "lib"}]
 python = "^3.10"
 seaborn = "^0.13.2"
 pandas = "^2.2.3"
-numpy = "^2.1.2"
+numpy = "^1.21.0"
 altair = {extras = ["all"], version = "^5.4.1"}
 scikit-learn = "^1.5.2"
 jupyterlab = "^4.3.0"
 ipykernel = "^6.29.5"
+catboost = "^1.2.7"
 
 
 [tool.poetry.group.dev.dependencies]
