@@ -51,3 +51,13 @@ def clean_sleep_column(df: pd.DataFrame, bin=False) -> pd.DataFrame:
     if bin:
         df["sleep_duration"] = pd.cut(df["sleep_duration"], 5, labels=range(5))
     return df
+
+
+def clean_profession_column(x: pd.DataFrame, min_sample_size: int = 30) -> pd.DataFrame:
+    """Clean all professions which have less than 30 samples => make profession NaN or Other.
+    """
+    profession_dist = x["profession"].value_counts()
+    ids = (profession_dist > min_sample_size).values
+    professions_to_agg = profession_dist[~ids].to_dict()
+    professions_to_agg = dict(zip(list(professions_to_agg.keys()), ['other']*len(professions_to_agg)))
+    return x.assign(profession=x["profession"].apply(lambda x: professions_to_agg[x] if x in professions_to_agg else x))
