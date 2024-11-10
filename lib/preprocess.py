@@ -19,4 +19,4 @@ def clean_column_diet_habits(df: pd.DataFrame) -> pd.DataFrame:
         "No Healthy": "Unhealthy",
         "Less Healthy": "Unhealthy"
     }
-    return df.assign(diet=df["diet"].apply(lambda x: diet_habit_mapping.get(x, "nan")))
+    return df.assign(diet=df["Dietary Habits"].apply(lambda x: diet_habit_mapping.get(x, "nan")))
